@@ -3,10 +3,11 @@ import { Route, Redirect } from "react-router-dom";
 
 interface Props {
   component: any;
+  exact?: boolean;
+  path: string;
 }
-// Another way to say "Leave me alone, TypeScript, I don't know what I'm doing yet"
 
-const PrivateRoute = ({ component: Component, ...rest }: Props) => {
+const VerifyLogin = ({ component: Component, ...rest }: Props) => {
   return (
     <Route
       {...rest}
@@ -21,4 +22,4 @@ const PrivateRoute = ({ component: Component, ...rest }: Props) => {
   );
 };
 
-export default PrivateRoute;
+export default VerifyLogin;
