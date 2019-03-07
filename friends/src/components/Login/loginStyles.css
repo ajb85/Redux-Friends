@@ -1,0 +1,19 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 258px;
+  margin: auto;
+}
+
+.loginForm div {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.loginForm div span {
+  margin-right: 20px;
+}
+
+.loginForm button {
+  margin-top: 10px;
+}
