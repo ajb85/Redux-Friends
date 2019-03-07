@@ -1,15 +1,26 @@
 import * as React from "react";
 import { useState } from "react";
+import { connect } from "react-redux";
 import "./loginStyles.css";
+import { login } from "../../actions";
 
-function Login() {
+interface credsLayout {
+  username: string;
+  password: string;
+}
+interface Props {
+  login(creds: credsLayout): any;
+}
+
+function Login(props: Props) {
   // Hooks
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   // "methods"
   const onAccountSubmit = (e: React.FormEvent) => {
-    e.preventDefault;
+    e.preventDefault();
+    props.login({ username, password });
   };
 
   return (
@@ -35,4 +46,7 @@ function Login() {
   );
 }
 
-export default Login;
+export default connect(
+  () => ({}),
+  { login }
+)(Login);
