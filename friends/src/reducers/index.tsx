@@ -13,8 +13,8 @@ const initialState: stateLayout = {
 export default (
   state: stateLayout = initialState,
   action: { type: string; payload: string }
-) => {
   // action expects two inputs that are both strings: type and payload
+) => {
   switch (action.type) {
     case NEW_FRIEND:
       return {
