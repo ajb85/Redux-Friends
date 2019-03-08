@@ -28,7 +28,6 @@ function FriendsList(props: Props) {
     props.getFriends();
     // Only run on mount
   }, []);
-  console.log("Friends List: ", props.friends);
   return (
     <div>
       {props.fetchingFriends && (

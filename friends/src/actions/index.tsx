@@ -5,8 +5,8 @@ export const LOGIN_SUCCESS: string = "LOGIN_SUCCESS";
 // export const LOGIN_ERROR: string = "LOGIN_ERROR";
 export const FETCHING_FRIENDS: string = "FETCHING_FRIENDS";
 export const FETCHED_FRIENDS: string = "FETCHED_FRIENDS";
-export const UPDATING_FRIEND: string = "UPDATING_FRIEND";
-export const SAVING_FRIENDS: string = "SAVING_FRIENDS";
+//export const UPDATING_FRIEND: string = "UPDATING_FRIEND";
+export const ADD_FRIEND: string = "SAVING_FRIENDS";
 
 interface credsLayout {
   username: string;
