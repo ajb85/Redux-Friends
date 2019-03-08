@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { getFriends } from "../../actions";
 import Loader from "react-loader-spinner";
+import AddFriend from "../AddFriend";
 
 interface friendsObj {
   id: number;
@@ -25,11 +26,12 @@ function FriendsList(props: Props) {
   // const [friendsList, setFriendsList] = useState();
   useEffect(() => {
     // basically componentDidMount
+
     props.getFriends();
-    // Only run on mount
   }, []);
   return (
     <div>
+      <AddFriend />
       {props.fetchingFriends && (
         <Loader type="Bars" color="black" height={80} width={80} />
       )}

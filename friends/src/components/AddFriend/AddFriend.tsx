@@ -1,4 +1,5 @@
 import * as React from "react";
+import { connect } from "react-redux";
 import { useState } from "react";
 import { addFriend } from "../../actions";
 
@@ -43,8 +44,21 @@ function AddFriend(props: Props) {
           setEmail(e.currentTarget.value)
         }
       />
+      <button type="submit">Submit</button>
     </form>
   );
 }
 
-export default AddFriend;
+interface State {
+  addingFriend: boolean;
+  updatingFriend: boolean;
+}
+const mapStateToProps = (state: State) => ({
+  addingFriend: state.addingFriend,
+  updatingFriend: state.updatingFriend
+});
+
+export default connect(
+  mapStateToProps,
+  { addFriend }
+)(AddFriend);

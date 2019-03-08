@@ -2,7 +2,8 @@ import {
   LOGGING_IN,
   LOGIN_SUCCESS,
   FETCHING_FRIENDS,
-  FETCHED_FRIENDS
+  FETCHED_FRIENDS,
+  ADDING_FRIEND
 } from "../actions";
 
 // Creat an object template for state.  Wherever 'stateLayout' is listed,
@@ -19,7 +20,7 @@ interface stateLayout {
   fetchingFriends: boolean;
   friends: friendsObj[];
   loggingIn: boolean;
-  savingFriends: boolean;
+  addingFriend: boolean;
   updatingFriend: boolean;
   error: null;
 }
@@ -29,7 +30,7 @@ const initialState: stateLayout = {
   fetchingFriends: false,
   friends: [],
   loggingIn: false,
-  savingFriends: false,
+  addingFriend: false,
   updatingFriend: false,
   error: null
 };
@@ -53,7 +54,14 @@ export default (
     case FETCHING_FRIENDS:
       return { ...state, fetchingFriends: true };
     case FETCHED_FRIENDS:
-      return { ...state, fetchingFriends: false, friends: action.payload };
+      return {
+        ...state,
+        fetchingFriends: false,
+        addingFriend: false,
+        friends: action.payload
+      };
+    case ADDING_FRIEND:
+      return { ...state, addingFriend: true };
     default:
       return state;
   }
